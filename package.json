@@ -1,0 +1,54 @@
+{
+  "name": "gh-home",
+  "version": "0.0.0",
+  "description": "Open the GitHub page of the repo in the current directory",
+  "license": "MIT",
+  "repository": "sindresorhus/gh-home",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bin": {
+    "gh-home": "cli.js",
+    "gh": "cli.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "github",
+    "git",
+    "gh",
+    "repo",
+    "repository",
+    "page",
+    "home",
+    "open",
+    "cwd",
+    "current",
+    "directory"
+  ],
+  "dependencies": {
+    "git-remote-origin-url": "^2.0.0",
+    "github-url-from-git": "^1.4.0",
+    "meow": "^3.7.0",
+    "opn": "^3.0.3"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "execa": "^0.2.2",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true
+  }
+}
