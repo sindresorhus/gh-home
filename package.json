@@ -1,6 +1,6 @@
 {
   "name": "gh-home",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Open the GitHub page of the repo in the current directory",
   "license": "MIT",
   "repository": "sindresorhus/gh-home",
