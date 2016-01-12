@@ -23,7 +23,7 @@ $ gh-home --help
 
 ## Related
 
-- [npm-home](https://github.com/sindresorhus/npm-home) - Open the npm page of the package in the current directory
+- [npm-home](https://github.com/sindresorhus/npm-home) - Open the npm page of a package
 
 
 ## License
