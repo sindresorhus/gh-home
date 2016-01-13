@@ -8,7 +8,6 @@ const opn = require('opn');
 meow(`
 	Usage
 	  $ gh-home
-	  $ gh
 `);
 
 gitRemoteOriginUrl().then(url => {
