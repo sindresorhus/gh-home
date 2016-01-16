@@ -20,6 +20,11 @@ $ gh-home --help
 ```
 
 
+## Tip
+
+In your `.zshrc`/`.bashrc` add `alias gh=gh-home` so that you can run it with `$ gh` instead.
+
+
 ## Related
 
 - [npm-home](https://github.com/sindresorhus/npm-home) - Open the npm page of a package
