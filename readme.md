@@ -17,7 +17,6 @@ $ gh-home --help
 
   Usage
     $ gh-home
-    $ gh
 ```
 
 

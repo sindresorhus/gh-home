@@ -10,8 +10,7 @@
     "url": "sindresorhus.com"
   },
   "bin": {
-    "gh-home": "cli.js",
-    "gh": "cli.js"
+    "gh-home": "cli.js"
   },
   "engines": {
     "node": ">=4"
