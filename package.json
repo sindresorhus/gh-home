@@ -40,7 +40,7 @@
     "git-remote-origin-url": "^2.0.0",
     "github-url-from-git": "^1.4.0",
     "meow": "^3.7.0",
-    "opn": "^3.0.3"
+    "opn": "^4.0.1"
   },
   "devDependencies": {
     "ava": "*",
