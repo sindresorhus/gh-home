@@ -11,13 +11,15 @@ meow(`
 	  $ gh-home
 `);
 
-gitRemoteUpstreamUrl().then(url => {
+function open(url) {
 	opn(githubUrlFromGit(url), {wait: false});
-}).catch(() => {
-	gitRemoteOriginUrl().then(url => {
-		opn(githubUrlFromGit(url), {wait: false});
-	}).catch(() => {
-		console.error(`Couldn't find the remote origin or upstream URLs. Ensure they're set and you're in a repo.\n\n  $ git remote add origin https://github.com/user/repo.git`);
+}
+
+gitRemoteUpstreamUrl()
+	.then(open)
+	.catch(() => gitRemoteOriginUrl())
+	.then(open)
+	.catch(() => {
+		console.error(`Couldn't find the remote origin or upstream. Ensure it's set and you're in a repo.\n\n  $ git remote add origin https://github.com/user/repo.git`);
 		process.exit(1);
 	});
-});

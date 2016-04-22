@@ -2,7 +2,8 @@
 
 > Open the GitHub page of the repo in the current directory
 
-This will open the GitHub page for the current directory. It will attempt to open the upstream branch first; if there is one it will open that, else it will open the fork's page.
+It will attempt to open the upstream repo if there is one or the forked repo.
+
 
 ## Install
 
@@ -34,4 +35,4 @@ In your `.zshrc`/`.bashrc` add `alias gh=gh-home` so that you can run it with `$
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
