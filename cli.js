@@ -17,10 +17,6 @@ const cli = meow(`
 	  $ gh-home avajs/ava
 `);
 
-function open(url) {
-	opn(githubUrlFromGit(url), {wait: false});
-}
-
 const input = cli.input[0];
 
 if (input) {
@@ -32,9 +28,8 @@ if (input) {
 	}
 } else {
 	gitRemoteUpstreamUrl()
-		.then(open)
 		.catch(() => gitRemoteOriginUrl())
-		.then(open)
+		.then(url => opn(githubUrlFromGit(url), {wait: false}))
 		.catch(() => {
 			console.error(`Couldn't find the remote origin or upstream. Ensure it's set and you're in a repo.\n\n  $ git remote add origin https://github.com/user/repo.git`);
 			process.exit(1);
