@@ -40,7 +40,7 @@
     "git-remote-upstream-url": "^2.0.0",
     "github-url-from-git": "^1.4.0",
     "meow": "^3.7.0",
-    "opn": "^5.0.0"
+    "open": "^6.2.0"
   },
   "devDependencies": {
     "ava": "*",
