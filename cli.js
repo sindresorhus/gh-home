@@ -31,6 +31,7 @@ if (input) {
 		.catch(() => gitRemoteOriginUrl())
 		.then(url => open(githubUrlFromGit(url), {wait: false}))
 		.catch(() => {
+			// eslint-disable-next-line quotes
 			console.error(`Couldn't find the remote origin or upstream. Ensure it's set and you're in a repo.\n\n  $ git remote add origin https://github.com/user/repo.git`);
 			process.exit(1);
 		});
