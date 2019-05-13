@@ -1,49 +1,49 @@
 {
-  "name": "gh-home",
-  "version": "1.4.1",
-  "description": "Open the GitHub page of the given or current directory repo",
-  "license": "MIT",
-  "repository": "sindresorhus/gh-home",
-  "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
-  },
-  "bin": "cli.js",
-  "engines": {
-    "node": ">=4"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
-    "cli.js"
-  ],
-  "keywords": [
-    "cli-app",
-    "cli",
-    "github",
-    "git",
-    "gh",
-    "repo",
-    "repository",
-    "page",
-    "home",
-    "open",
-    "cwd",
-    "current",
-    "directory"
-  ],
-  "dependencies": {
-    "execa": "^0.6.3",
-    "git-remote-origin-url": "^2.0.0",
-    "git-remote-upstream-url": "^2.0.0",
-    "github-url-from-git": "^1.4.0",
-    "meow": "^3.7.0",
-    "opn": "^5.0.0"
-  },
-  "devDependencies": {
-    "ava": "*",
-    "xo": "*"
-  }
+	"name": "gh-home",
+	"version": "1.4.1",
+	"description": "Open the GitHub page of the given or current directory repo",
+	"license": "MIT",
+	"repository": "sindresorhus/gh-home",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"bin": "cli.js",
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"test": "xo && ava"
+	},
+	"files": [
+		"cli.js"
+	],
+	"keywords": [
+		"cli-app",
+		"cli",
+		"github",
+		"git",
+		"gh",
+		"repo",
+		"repository",
+		"page",
+		"home",
+		"open",
+		"cwd",
+		"current",
+		"directory"
+	],
+	"dependencies": {
+		"execa": "^1.0.0",
+		"git-remote-origin-url": "^3.0.0",
+		"git-remote-upstream-url": "^2.0.0",
+		"github-url-from-git": "^1.4.0",
+		"meow": "^5.0.0",
+		"open": "^6.3.0"
+	},
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"xo": "^0.24.0"
+	}
 }

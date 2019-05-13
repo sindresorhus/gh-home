@@ -35,7 +35,6 @@ Add `alias gh=gh-home` to your `.zshrc`/`.bashrc`, so that you can run it with `
 ## Related
 
 - [npm-home](https://github.com/sindresorhus/npm-home) - Open the npm page of a package
-- [gh-upstream](https://github.com/RichardLitt/gh-upstream) - Open the GitHub page of the upstream remote for the repo in the current directory
 
 
 ## License

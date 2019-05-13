@@ -4,7 +4,7 @@ const meow = require('meow');
 const gitRemoteOriginUrl = require('git-remote-origin-url');
 const gitRemoteUpstreamUrl = require('git-remote-upstream-url');
 const githubUrlFromGit = require('github-url-from-git');
-const opn = require('opn');
+const open = require('open');
 const execa = require('execa');
 
 const cli = meow(`
@@ -17,21 +17,31 @@ const cli = meow(`
 	  $ gh-home avajs/ava
 `);
 
-const input = cli.input[0];
+const repo = cli.input[0];
 
-if (input) {
-	if (input.includes('/')) {
-		opn(`https://github.com/${input}`, {wait: false});
+(async () => {
+	if (repo) {
+		if (repo.includes('/')) {
+			await open(`https://github.com/${repo}`);
+		} else {
+			const {stdout: user} = await execa('git', ['config', '--global', 'github.user']);
+			await open(`https://github.com/${user}/${repo}`);
+		}
 	} else {
-		const user = execa.sync('git', ['config', '--global', 'github.user']).stdout;
-		opn(`https://github.com/${user}/${input}`, {wait: false});
-	}
-} else {
-	gitRemoteUpstreamUrl()
-		.catch(() => gitRemoteOriginUrl())
-		.then(url => opn(githubUrlFromGit(url), {wait: false}))
-		.catch(() => {
-			console.error(`Couldn't find the remote origin or upstream. Ensure it's set and you're in a repo.\n\n  $ git remote add origin https://github.com/user/repo.git`);
+		let url;
+		try {
+			try {
+				url = await gitRemoteUpstreamUrl();
+			} catch (_) {
+				url = await gitRemoteOriginUrl();
+			}
+
+			url = githubUrlFromGit(url);
+		} catch (_) {
+			console.error('Couldn\'t find the remote origin or upstream. Ensure it\'s set and you\'re in a repo.\n\n  $ git remote add origin https://github.com/user/repo.git');
 			process.exit(1);
-		});
-}
+		}
+
+		await open(url);
+	}
+})();
