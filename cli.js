@@ -42,6 +42,10 @@ const repo = cli.input[0];
 			process.exit(1);
 		}
 
-		await open(url);
+		if (url) {
+			await open(url);
+		} else {
+			console.error('Couldn\'t find the repo\'s url. Ensure you are inside a github repo.');			
+		}
 	}
 })();
