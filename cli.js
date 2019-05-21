@@ -42,6 +42,11 @@ const repo = cli.input[0];
 			process.exit(1);
 		}
 
+		if (!url) {
+			console.error('Couldn\'t find the repo\'s GitHub URL. Ensure you are inside a Git repo that points to GitHub.');
+			process.exit(1);
+		}
+
 		await open(url);
 	}
 })();
