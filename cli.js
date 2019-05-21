@@ -24,7 +24,7 @@ const repo = cli.input[0];
 		if (repo.includes('/')) {
 			await open(`https://github.com/${repo}`);
 		} else {
-			const { stdout: user } = await execa('git', ['config', '--global', 'github.user']);
+			const {stdout: user} = await execa('git', ['config', '--global', 'github.user']);
 			await open(`https://github.com/${user}/${repo}`);
 		}
 	} else {
@@ -43,7 +43,7 @@ const repo = cli.input[0];
 		}
 
 		if (!url) {
-			console.error('Couldn\'t find the repo\'s GITHUB URL. Ensure you are inside a github repo.');
+			console.error('Couldn\'t find the repo\'s GitHub URL. Ensure you are inside a Git repo that points to GitHub.');
 			process.exit(1);
 		}
 
