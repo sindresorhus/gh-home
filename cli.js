@@ -47,6 +47,6 @@ const repo = cli.input[0];
 			process.exit(1);
 		}
 
-		await open(url);		
+		await open(url);
 	}
 })();
