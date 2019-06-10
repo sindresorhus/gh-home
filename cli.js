@@ -37,7 +37,7 @@ const repo = cli.input[0];
 			}
 			let _url = url
 			url = githubUrlFromGit(url);
-        	if(!url && _url) url = _url
+			if(!url && _url) url = _url
 		} catch (_) {
 			console.error('Couldn\'t find the remote origin or upstream. Ensure it\'s set and you\'re in a repo.\n\n  $ git remote add origin https://github.com/user/repo.git');
 			process.exit(1);
