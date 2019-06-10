@@ -35,6 +35,7 @@ const repo = cli.input[0];
 			} catch (_) {
 				url = await gitRemoteOriginUrl();
 			}
+			
 			const _url = url;
 			url = githubUrlFromGit(url);
 			if (!url && _url) {
