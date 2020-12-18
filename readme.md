@@ -24,9 +24,16 @@ $ gh-home --help
     $ gh-home avajs/ava
 ```
 
-## Tip
+## Tips
 
 Add `alias gh=gh-home` to your `.zshrc`/`.bashrc`, so that you can run it with `$ gh` instead.
+
+You can also use the official [GitHub CLI](https://github.com/cli/cli) instead:
+
+```
+$ gh alias set home "repo view --web"
+$ gh home
+```
 
 ## Related
 
