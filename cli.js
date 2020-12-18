@@ -32,12 +32,12 @@ const repo = cli.input[0];
 		try {
 			try {
 				url = await gitRemoteUpstreamUrl();
-			} catch (_) {
+			} catch {
 				url = await gitRemoteOriginUrl();
 			}
 
 			url = githubUrlFromGit(url);
-		} catch (_) {
+		} catch {
 			console.error('Couldn\'t find the remote origin or upstream. Ensure it\'s set and you\'re in a repo.\n\n  $ git remote add origin https://github.com/user/repo.git');
 			process.exit(1);
 		}

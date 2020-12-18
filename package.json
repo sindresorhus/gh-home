@@ -4,14 +4,15 @@
 	"description": "Open the GitHub page of the given or current directory repo",
 	"license": "MIT",
 	"repository": "sindresorhus/gh-home",
+	"funding": "https://github.com/sponsors/sindresorhus",
 	"author": {
 		"name": "Sindre Sorhus",
 		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
+		"url": "https://sindresorhus.com"
 	},
 	"bin": "cli.js",
 	"engines": {
-		"node": ">=8"
+		"node": ">=10"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -35,15 +36,15 @@
 		"directory"
 	],
 	"dependencies": {
-		"execa": "^1.0.0",
-		"git-remote-origin-url": "^3.0.0",
+		"execa": "^5.0.0",
+		"git-remote-origin-url": "^3.1.0",
 		"git-remote-upstream-url": "^2.0.0",
-		"github-url-from-git": "^1.4.0",
-		"meow": "^5.0.0",
-		"open": "^6.3.0"
+		"github-url-from-git": "^1.5.0",
+		"meow": "^8.0.0",
+		"open": "^7.3.0"
 	},
 	"devDependencies": {
-		"ava": "^1.4.1",
-		"xo": "^0.24.0"
+		"ava": "^2.4.0",
+		"xo": "^0.36.1"
 	}
 }
