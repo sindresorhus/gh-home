@@ -27,7 +27,7 @@ $ gh-home --help
     $ gh-home myrepo
     $ gh-home avajs/ava
     $ gh-home --issues
-	  $ gh-home --prs
+    $ gh-home --prs
 ```
 
 ## Tips
