@@ -18,10 +18,16 @@ $ gh-home --help
   Usage
     $ gh-home [repo | user/repo]
 
+  Options
+	  --prs -p	   Open the pull requests of a GitHub repo
+	  --issues -i  Open the issues of a GitHub repo
+
   Examples
     $ gh-home
     $ gh-home myrepo
     $ gh-home avajs/ava
+    $ gh-home --issues
+	  $ gh-home --prs
 ```
 
 ## Tips
