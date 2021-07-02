@@ -12,8 +12,8 @@ const cli = meow(`
 	  $ gh-home [repo | user/repo]
 
 	Options
-	  --prs  	Open the pull requsts of a GitHub repo
-	  --issues 	Open the issues of a GitHub repo
+	  --prs -p	   Open the pull requests of a GitHub repo
+	  --issues -i  Open the issues of a GitHub repo
 	
 	Examples
 	  $ gh-home
