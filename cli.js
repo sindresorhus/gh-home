@@ -41,11 +41,9 @@ const options = cli.flags;
 
 const openUrl = (url, options) => {
 	if (options.prs) {
-		return open(`${url}/pulls`);
-	}
-
-	if (options.issues) {
-		return open(`${url}/issues`);
+		url = `${url}/pulls`;
+	} else if (options.issues) {
+		url = `${url}/issues`;
 	}
 
 	return open(url);
