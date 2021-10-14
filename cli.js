@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-'use strict';
-const meow = require('meow');
-const gitRemoteOriginUrl = require('git-remote-origin-url');
-const gitRemoteUpstreamUrl = require('git-remote-upstream-url');
-const githubUrlFromGit = require('github-url-from-git');
-const open = require('open');
-const execa = require('execa');
+import process from 'node:process';
+import meow from 'meow';
+import gitRemoteOriginUrl from 'git-remote-origin-url';
+import gitRemoteUpstreamUrl from 'git-remote-upstream-url';
+import githubUrlFromGit from 'github-url-from-git';
+import open from 'open';
+import execa from 'execa';
 
 const cli = meow(`
 	Usage
@@ -14,7 +14,7 @@ const cli = meow(`
 	Options
 	  --prs -p	   Open the pull requests of a GitHub repo
 	  --issues -i  Open the issues of a GitHub repo
-	
+
 	Examples
 	  $ gh-home
 	  $ gh-home myrepo
@@ -22,18 +22,19 @@ const cli = meow(`
 	  $ gh-home --issues
 	  $ gh-home --prs
 `, {
+	importMeta: import.meta,
 	flags: {
 		prs: {
 			type: 'boolean',
 			default: false,
-			alias: 'p'
+			alias: 'p',
 		},
 		issues: {
 			type: 'boolean',
 			default: false,
-			alias: 'i'
-		}
-	}
+			alias: 'i',
+		},
+	},
 });
 
 const repo = cli.input[0];
@@ -68,13 +69,15 @@ const openUrl = (url, options) => {
 
 			url = githubUrlFromGit(url);
 		} catch {
-			console.error('Couldn\'t find the remote origin or upstream. Ensure it\'s set and you\'re in a repo.\n\n  $ git remote add origin https://github.com/user/repo.git');
-			process.exit(1);
+			console.error('Could not find the remote origin or upstream. Ensure it\'s set and you\'re in a repo.\n\n  $ git remote add origin https://github.com/user/repo.git');
+			process.exirCode = 1;
+			return;
 		}
 
 		if (!url) {
-			console.error('Couldn\'t find the repo\'s GitHub URL. Ensure you are inside a Git repo that points to GitHub.');
-			process.exit(1);
+			console.error('Could not find the repo\'s GitHub URL. Ensure you are inside a Git repo that points to GitHub.');
+			process.exitCode = 1;
+			return;
 		}
 
 		await openUrl(url, options);

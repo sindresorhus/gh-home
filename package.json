@@ -10,9 +10,10 @@
 		"email": "sindresorhus@gmail.com",
 		"url": "https://sindresorhus.com"
 	},
+	"type": "module",
 	"bin": "cli.js",
 	"engines": {
-		"node": ">=10"
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
 	},
 	"scripts": {
 		"test": "xo && ava"
@@ -36,15 +37,15 @@
 		"directory"
 	],
 	"dependencies": {
-		"execa": "^5.0.0",
-		"git-remote-origin-url": "^3.1.0",
+		"execa": "^5.1.1",
+		"git-remote-origin-url": "^4.0.0",
 		"git-remote-upstream-url": "^2.0.0",
 		"github-url-from-git": "^1.5.0",
-		"meow": "^8.0.0",
-		"open": "^7.3.0"
+		"meow": "^10.1.1",
+		"open": "^8.3.0"
 	},
 	"devDependencies": {
-		"ava": "^2.4.0",
-		"xo": "^0.36.1"
+		"ava": "^3.15.0",
+		"xo": "^0.45.0"
 	}
 }

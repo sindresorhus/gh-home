@@ -6,8 +6,8 @@ It will attempt to open the upstream repo if there is one or the forked repo.
 
 ## Install
 
-```
-$ npm install --global gh-home
+```sh
+npm install --global gh-home
 ```
 
 ## Usage
