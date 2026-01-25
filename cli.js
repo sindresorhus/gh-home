@@ -64,8 +64,8 @@ const openUrl = (url, options) => {
 			try {
 				url = await gitRemoteUpstreamUrl();
 			} catch {
-				const { stdout: remoteName } = await execa('git', ['remote'])
-				url = await gitRemoteOriginUrl({ remoteName });
+				const {stdout: remoteName} = await execa('git', ['remote']);
+				url = await gitRemoteOriginUrl({remoteName});
 			}
 
 			url = githubUrlFromGit(url);
